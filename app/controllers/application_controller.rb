@@ -7,8 +7,8 @@ class ApplicationController < Sinatra::Base
 
     todo_app = proc { [200, {'Content-Type' => 'text/plain'}, ['ok']] }
 
-    get "/" do
-        "Welcome in Todos APP"
-    end
+   get '/' do
+    "Hello World"
+  end
 
 end
