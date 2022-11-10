@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_10_050448) do
+ActiveRecord::Schema.define(version: 2022_11_10_061134) do
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2022_11_10_050448) do
     t.index ["category_id"], name: "index_todos_on_category_id"
     t.index ["title"], name: "index_todos_on_title"
     t.index ["user_id"], name: "index_todos_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.datetime "deleted_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "todos", "categories"
