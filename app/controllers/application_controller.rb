@@ -1,9 +1,9 @@
 class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+
+    toto_app = proc { [200, {'Content-Type' => 'text/plain'}, ['ok']] }
+
+    get "/" do
+        "Welcome in Todos APP"
+    end
 
 end
